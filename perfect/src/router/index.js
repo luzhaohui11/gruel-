@@ -14,88 +14,115 @@ import cart from '../components/cart/cart.vue'
 import all from '../components/all/all.vue'
 import stroll from '../components/stroll/stroll.vue'
 import usercenter from '../components/usercenter/usercenter.vue'
-
+import App2 from '../components/App2/App2.vue'
+import setting from '../components/setting/setting.vue'
+import register from '../components/register/register.vue'
+import homelist from '../components/2877/2877.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
+      path: '/setting',
+      name: 'setting',
+      component: setting
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/channelsub/2860/2877',
+      name: '家务产品',
+      component: homelist
+    },
+
+    {
       path: '/',
-      name: 'content',
-      component: content,
-      children: [
+      name: 'App2',
+      component: App2,
+      children:[
         {
           path: '/',
-          name: 'Home',
-          component: Home
+          name: 'content',
+          component: content,
+          children: [
+            {
+              path: '/',
+              name: 'Home',
+              component: Home
+            },
+            {
+              path: '/New',
+              name: 'New',
+              component: New
+            },
+
+
+
+
+            {
+              path: '/channel/2860',
+              name: '2860',
+              component: household
+            },
+            {
+              path: '/channel/2859',
+              name: '2859',
+              component: icook
+            },
+            {
+              path: '/channel/2865',
+              name: '2865',
+              component: clothes
+            },
+            {
+              path: '/channel/2861',
+              name: '2861',
+              component: live
+            },
+            {
+              path: '/channel/3260',
+              name: '3260',
+              component: software
+            },
+            {
+              path: '/channel/2862',
+              name: '2862',
+              component: bed
+            },
+            {
+              path: '/channel/2863',
+              name: '2863',
+              component: work
+            },
+          ]
         },
         {
-          path: '/New',
-          name: 'New',
-          component: New
+          path: '/all',
+          name: 'all',
+          component:all
         },
-
-
-
-
-    {
-      path: '/channel/2860',
-      name: '2860',
-      component: household
-    },
-    {
-      path: '/channel/2859',
-      name: '2859',
-      component: icook
-    },
-    {
-      path: '/channel/2865',
-      name: '2865',
-      component: clothes
-    },
-    {
-      path: '/channel/2861',
-      name: '2861',
-      component: live
-    },
-    {
-      path: '/channel/3260',
-      name: '3260',
-      component: software
-    },
-    {
-      path: '/channel/2862',
-      name: '2862',
-      component: bed
-    },
-    {
-      path: '/channel/2863',
-      name: '2863',
-      component: work
-    },
+        {
+          path: '/stroll',
+          name: 'stroll',
+          component: stroll
+        },
+        {
+          path: '/cart',
+          name: 'cart',
+          component: cart
+        },
+        {
+          path: '/usercenter',
+          name: 'usercenter',
+          component: usercenter
+        },
       ]
     },
-    {
-      path: '/all',
-      name: 'all',
-      component:all
-    },
-    {
-      path: '/stroll',
-      name: 'stroll',
-      component: stroll
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: cart
-    },
-    {
-      path: '/usercenter',
-      name: 'usercenter',
-      component: usercenter
-    },
+
 
   ]
 })

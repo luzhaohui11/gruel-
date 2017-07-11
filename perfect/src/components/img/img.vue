@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div id="container">
   <ul class="newitems" >
     <li class="newitem" v-for="goodsItem in goods">
-      <router-link to="">
-        <img :src="goodsItem.urlimg" alt="">
-      </router-link>
+
+     <dd>
+       <router-link to="" >
+       <img :src="goodsItem.urlimg" alt="">
+     </router-link>
       <div  class="item-panel">
         <div class="title clearFix">
           {{goodsItem.name}}
@@ -18,12 +20,17 @@
           <div  class="item-comment">评论：{{goodsItem.comentNum}}</div>
         </div>
       </div>
+     </dd>
     </li>
   </ul>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import { Lazyload } from 'mint-ui';
+
+  Vue.use(Lazyload);
   export default {
     props: ['goods']
   }

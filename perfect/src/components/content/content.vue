@@ -1,6 +1,8 @@
 <template>
   <div>
-    <header id="header">
+    <div id="contentwrapper-out">
+    <div class="contentwrapper">
+    <header class="header">
       <div id="header-icon"></div>
       <router-link to="/all" class="head-typeimg"><span></span></router-link>
     </header>
@@ -40,7 +42,9 @@
         </ul>
       </div>
     </div>
+    </div>
     <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -49,10 +53,11 @@
 </script>
 
 <style>
-  #header {
-    width: auto;
-    height: 4rem;
-    background: #89be48;
+
+  #header-band::-webkit-scrollbar {
+    height: 0px;
+    background-color: #e3e3e3;
+    opacity:1;
   }
 
   #header-icon {

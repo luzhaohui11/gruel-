@@ -1,28 +1,39 @@
 <template>
-    <div>
-
-        <p class="subcat-title">最近一周新品</p>
+  <div>
+    <header id="headerwrapper">
+      <div id="header">
+      <router-link to="/channel/2860">
+      <span  class="btn-back">
+        <label class="leftback-img">
+        </label>
+      </span>
+      </router-link>
+      <p class="header-title">家务</p>
+      </div>
+      <div class="header-2877">
+        <ul>
+          <li>
+            <router-link to="">新品</router-link>
+          </li>
+          <li>
+            <router-link to="">畅销</router-link>
+          </li>
+          <li>
+            <router-link to="">价格</router-link>
+          </li>
+        </ul>
+      </div>
+      <div id="homecontent">
         <imgs :goods="goods"></imgs>
-        <div slot="top" class="mint-loadmore-top">
-          <span v-show="topStatus === 'drop'">释放更新</span>
-          <span v-show="topStatus === 'pull'"  >下拉更新</span>
-          <span v-show="topStatus === 'loading'"  >
-               加载中...</span>
-                  </div>
-
-    </div>
+      </div>
+    </header>
+  </div>
 </template>
 
 <script>
   import imgs from '../img/img.vue'
-    export default {
-      data() {
-        return {
-          topStatus: '',
-        }
-        },
+  export default {
       created () {
-
         this.goods=[
           {name:'洗衣防水巾(30片)',
             price:9,
@@ -76,32 +87,59 @@
             urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
 
         ]
-
-
       },
-      methods:{
-        handleTopChange(status) {
-          this.topStatus = status;
-        },
-        loadTop() {
-
-          this.$refs.loadmore.onTopLoaded();
-        }
-      },
-      components:{
+      components : {
         imgs
       }
-    }
+  }
 </script>
 
 <style>
-.subcat-title{
-  max-width: 96%;
-  text-align: center;
-  font-size: 1.9em;
-  color: #000;
-  line-height: 2em;
-  margin: 0 auto -1.2em;
+  /*.header {*/
+    /*padding: 0;*/
+    /*width: 100%;*/
+    /*background: #89be48;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*z-index: 999;*/
+    /*margin: auto;*/
+  /*}*/
+
+
+.header-2877 ul{
+  padding: .4rem 2%;
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+  height: 3rem;
 }
+.header-2877 ul li{
+  float: left;
+  width: 33.33333%;
+  height: 3rem;
+  line-height: 3rem;
+}
+.header-2877 ul li a{
+  display: block;
+  position: relative;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  border-right: 1px solid #f2f2f2;
+  text-align: center;
+  margin-top: .8rem;
+  font-size: 1.35rem;
+  color: #666;
+}
+
+
+  #header  leftback-img {
+    width: 1rem;
+    height: 2.6rem;
+    display: block;
+    float: left;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeAQMAAAAW3KwoAAAABlBMV…AuHxDLALEFEBcA8QMc0lAsAxYDyYHUgNSC9ID04lNwAACHIArVHBwTzAAAAABJRU5ErkJggg==) no-repeat;
+    position: absolute;
+    left: 4%;
+    top: .6rem;
+  }
 
 </style>

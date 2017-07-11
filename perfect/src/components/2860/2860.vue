@@ -1,13 +1,394 @@
 <template>
-    <div>
-我是60
+  <div id="homegoods">
+    <squarlist :homegoods="homegoods" :url="url"></squarlist>
+    <div   id="category-banner" class="category-banner">
+      <img src="http://i.lifevccdn.com/upload/DesignerMessageImg/9203af2fbef145daa142dd97bb84fae3.jpg"
+           class="item-pic">
     </div>
+    <div id="ceoRecommend">
+      <div class="subcat-title">Rico.S的精心推荐：</div>
+      <imgs :goods="goods"></imgs>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {}
+  import squarlist from '../squarlist/squarlist.vue'
+  import imgs from '../img/img.vue'
+  export default {
+    created(){
+      this.url='../channelsub/2860/2877'
+      this.goods=[
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+        {name:'洗衣防水巾(30片)',
+          price:9,
+          oldprice:19,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/22ff9444fc364a4cb66a5b31e2eb805b_d1242x0.jpg'},
+        {name:'全棉舒适四件套(绵羊)',
+          price:269,
+          oldprice:319,
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/5bcd664da38e459aa7cf2e8c2c2542ab_d1242x0.jpg'},
+        {name:'耐磨高弹力旅行箱保护套',
+          price:39,
+          oldprice:49,
+          comentNum:1,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/e9c796325d644c80b8eee21e94fb2e46_d1242x0.jpg'},
+        {name:'防滑金属衣架(3只装)',
+          price:19,
+          oldprice:'',
+          comentNum:3,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/17ef2de78aca4bdabc82697e743ca707_d1242x0.jpg'},
+        {name:'席梦思保护套(梦幻系列)',
+          price:109,
+          oldprice:'',
+          comentNum:109,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/4e3696ca1ee14a7c80a29b98fdbcf6a6_d1242x0.jpg'},
+        {name:'分类整理收纳箱',
+          price:39,
+          oldprice:'',
+          comentNum:8,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/16b39b0ca5504a59b1dd8347d540287f_d1242x0.jpg'},
+        {name:'便携式防水防污购物袋 ',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/1e499193e70d4ebba44f7d77edac9e86_d1242x0.jpg'},
+        {name: '专业防水运动包',
+          price:49,
+          oldprice:'',
+          comentNum:26,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/6b4df93f9686487cb33f072ad0cd9556_d1242x0.jpg'},
+        {name:'折叠式差旅多功能包',
+          price:49,
+          oldprice:'',
+          comentNum:22,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/019e6f4dd8fb4c69b67291336c5ec78b_d1242x0.jpg'},
+        {name:'高端合金框飞机轮商务箱',
+          price:399,
+          oldprice:'',
+          comentNum:0,
+          urlimg:'http://i.lifevccdn.com/upload/AppItemInfoImage/07f53b859b274e158d2ab06c3bc519c5_d1242x0.jpg'},
+
+      ]
+      this.homegoods = [
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/54079a754099447281e284d45a5c078b.jpg',
+          'name': '家务工具'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/04597da396224b39a5184c7b031c507d.jpg',
+          'name': '家庭清洁剂'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/f14c5afd18a74be197bbef999e58387e.jpg',
+          'name': '防霉除菌'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/4f4dc02735f74e568d7adbe6ac1522f2.jpg',
+          'name': '百纳箱'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/33daaf6cfaa345e8a475ce8ea932a393.jpg',
+          'name': '衣物收纳'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/9bbb1b97d5c04460a76fde006f08c6ea.jpg',
+          'name': '酵素洗衣液'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/4a8a241b4f7041b2b6bd9bfa1d24a87c.jpg',
+          'name': '魔力挂钩'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/6f88e8a13af944019d6b8cee8c723b7e.jpg',
+          'name': '生活必备'
+        },
+        {
+          'avater': 'http://i.lifevccdn.com/upload/AppIndexIcon/eef70d4649914a2c9323e16c9907d62d.jpg',
+          'name': '地毯地垫'
+        },
+      ]
+    },
+    components: {
+      squarlist,
+      imgs
+    }
+
+  }
 </script>
 
 <style>
-
+.category-banner {
+  width: 100%;  }
+.category-banner img{
+  width: 100%;
+  display: block;
+  vertical-align: top;
+}
+#ceoRecommend{
+  margin: -4rem auto 2rem;
+  padding: 4rem 0 0;
+}
+  .subcat-title{
+    max-width: 96%;
+    text-align: center;
+    font-size: 1.9em;
+    color: #000;
+    line-height: 2.5em;
+    margin: 0 auto -1.2em;
+  }
+#homegoods{
+  background-color:#f2f2f2;
+  padding-top: 1rem;}
 </style>
