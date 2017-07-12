@@ -4,41 +4,48 @@
     <div class="contentwrapper">
     <header class="header">
       <div id="header-icon"></div>
-      <router-link to="/all" class="head-typeimg"><span></span></router-link>
+      <span  @click="changeIcon" >
+      <router-link to="/all" class="head-typeimg" ><span></span></router-link>
+    </span>
     </header>
     <div>
       <div id="header-band">
         <ul>
+          <router-link to="/">
           <li>
-            <router-link to="/">首页</router-link>
+         首页
           </li>
-          <li>
-            <router-link to="/New">新品</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/2860">家务</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/2859">下厨</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/2865">家居服</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/2861">生活</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/3260">软装</router-link>
-          </li>
-          <li>
-            <router-link to="/channel/2862">床品</router-link>
-          </li>
-          <li>
-          <router-link to="/channel/2863">工作和旅行</router-link>
-        </li>
-          <li>
-            <router-link to="/#"  >了解LifeVC</router-link>
-        </li>
+          </router-link>
+
+            <router-link to="/New" > <li class="bands">新品  </li></router-link>
+
+
+            <router-link to="/channel/2860"><li>家务</li></router-link>
+
+
+            <router-link to="/channel/2859"><li>下厨</li>
+            </router-link>
+
+            <router-link to="/channel/2865"><li>家居服 </li></router-link>
+
+
+            <router-link to="/channel/2861">
+              <li>生活</li></router-link>
+
+
+            <router-link to="/channel/3260">
+              <li>软装  </li>
+</router-link>
+
+
+            <router-link to="/channel/2862"><li>床品</li></router-link>
+
+
+          <router-link to="/channel/2863"><li>工作和旅行 </li></router-link>
+
+
+            <router-link to="/#"  ><li>了解LifeVC</li></router-link>
+
         </ul>
       </div>
     </div>
@@ -49,10 +56,22 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+      props:['changeIcon'],
+
+        methods : {
+          change() {
+                console.log(this.changeIcon)
+              this.changeIcon()
+            },
+
+        }
+
+  }
 </script>
 
 <style>
+
 
   #header-band::-webkit-scrollbar {
     height: 0px;
@@ -105,7 +124,7 @@
     border-bottom: 2px solid #ddd;
   }
 
-  #header-band li a {
+  #header-band  a li {
     height: 3.8rem;
     display: block;
     line-height: 3.8rem;
@@ -113,5 +132,9 @@
     position: relative;
     font-size: 1.35rem;
     color: #333;
+  }
+.active .bands{
+    color: #80b532;
+    border-bottom: 2px solid #80b532;
   }
 </style>

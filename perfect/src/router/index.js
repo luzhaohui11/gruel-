@@ -18,15 +18,22 @@ import App2 from '../components/App2/App2.vue'
 import setting from '../components/setting/setting.vue'
 import register from '../components/register/register.vue'
 import homelist from '../components/2877/2877.vue'
+import login from '../components/login/login.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/setting',
       name: 'setting',
       component: setting
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     },
     {
       path: '/register',
